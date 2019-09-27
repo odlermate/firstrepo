@@ -15,13 +15,25 @@ namespace oraimunka
             int e = Convert.ToInt32(Console.ReadLine());
             for (int i = 0; i < e; i++)
             {
-                Console.WriteLine("Kérlek add meg a(z) {0}. számot", i);
-                szamok[i] = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Kérlek add meg a(z) {0}. számot", i + 1);
+                    szamok.Add(Convert.ToInt32(Console.ReadLine()));
+                }catch
+                {
+                    Console.WriteLine("nem megfelelő számot adtál meg!");
+                    i--;
+                }
+                
             }
             var max = szamok.Max();
-            var min 
+            var min = szamok.Min();
+            Console.WriteLine("A legnagyobb szám: {0}, a legkissebb pedig: {1}", max, min);
 
 
+
+
+            Console.ReadKey();
         }
     }
 }
